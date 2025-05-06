@@ -67,7 +67,7 @@
                 </div>
 
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    <button type="submit" class="btn btn-danger">Simpan</button>
                 </div>          
             </div>
         </div>
