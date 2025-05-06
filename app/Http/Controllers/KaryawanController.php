@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Karyawan;
+use App\Models\Departemen;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -25,7 +26,9 @@ class KaryawanController extends Controller
     public function create()
     {
         //
-        return view('karyawan.create');
+        $departemen = Departemen::all();
+
+        return view('karyawan.create',['departemen'=>$departemen]);
     }
 
     /**
@@ -57,11 +60,12 @@ class KaryawanController extends Controller
         $foto_nama = date('ymdhis').".".$foto_ekstensi;
         $foto_file->move(public_path('foto'),$foto_nama);
 
-        $data =[
+        $data =[    
             'nip' => $request->input('nip'),
             'nama_karyawan' => $request->input('nama_karyawan'),
             'gaji_karyawan' => $request->input('gaji_karyawan'),
             'alamat' => $request->input('alamat'),
+            'departemen_id' => $request->input('departemen_id'),
             'jenis_kelamin' => $request->input('jenis_kelamin'),
             'foto' => $foto_nama,
         ];

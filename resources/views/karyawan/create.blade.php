@@ -39,8 +39,15 @@
                        <textarea class="form-control" name="alamat"></textarea>
                     </div>
 
-               
 
+                    <div class="form-group">
+                        <label>Departemen</label>
+                            <select name="departemen_id" class="custom-select">
+                                @foreach ($departemen as $item)
+                                 <option value="{{$item->id}}">{{$item->nama_departemen}}</option>   
+                                @endforeach
+               
+                            </select>
                
                     <div class="form-group">
                         <label>Jenis Kelamin</label>

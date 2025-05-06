@@ -48,6 +48,7 @@
                                             <th>Nama Karyawan</th>
                                             <th>Jenis Kelamin</th>
                                             <th>Gaji Karyawan</th>
+                                            <th>Departemen</th>
                                             <th>Alamat</th>
                                             <th>Aksi</th>
                                         </tr>
@@ -65,7 +66,8 @@
                                             <td>{{$karyawan->nip}}</td>
                                             <td>{{$karyawan->nama_karyawan}}</td>
                                             <td>{{$karyawan->jenis_kelamin}}</td>
-                                            <td>{{$karyawan->gaji_karyawan}}</td>
+                                            <td>{{$karyawan->gaji_karyawan}}</td>                   
+                                            <td>{{$karyawan->departemen['nama_departemen']}}</td>
                                             <td>{{$karyawan->alamat}}</td>
                                             <td>
                                               <a class="btn btn-sm btn-primary" href="{{url('karyawan/'.$karyawan->nip.'/edit')}}">Edit</a>

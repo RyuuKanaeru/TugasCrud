@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('nama_karyawan');
             $table->integer('gaji_karyawan');
             $table->text('alamat');
-            $table->enum('jenis_kelamin',['Pria','Wanita']);
+            $table->integer('departemen_id');
+            $table->enum('jenis_kelamin',['Pria','Wanita']);         
             $table->timestamps();
         });
     }
